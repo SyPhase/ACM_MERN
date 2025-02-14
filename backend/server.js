@@ -1,7 +1,7 @@
 import "dotenv/config";
 
 import express, { json } from "express";
-const app = express();
+const app = express();	// same as: const car = require("");
 
 import cors from "cors";
 import session from "express-session";
@@ -10,7 +10,7 @@ import MongoStore from "connect-mongo";
 import { connectToServer } from "./db/conn.js";
 import sampleRoutes from "./routes/sampleRoutes.js";
 
-app.use(json());
+app.use(json());	// uses JSON
 app.use(
 	cors({
 		origin: "http://localhost:3000",
@@ -32,7 +32,7 @@ app.use(
 	})
 );
 
-app.use(sampleRoutes);
+app.use(sampleRoutes);	// see routes\sampleRoutes.js
 
 const port = process.env.PORT && 4000; //can be zero
 
